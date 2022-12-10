@@ -52,7 +52,7 @@ sudo apt-get update
 sudo chmod a+r /etc/apt/keyrings/docker.gpg
 ```
 
-### Затем попробуйте команду снова
+### Затем попробуем команду снова
 
 ```
 sudo apt-get update
@@ -60,7 +60,7 @@ sudo apt-get update
 
 # Устанавливаем Docker
 
-### Устанавливаем последнюю версию Docker
+### Устанавливаем последнюю версию Docker-Engine
 
 ```
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
@@ -94,4 +94,5 @@ groups
 docker -v
 ``` 
 # Установка Docker-compose
-### 
+### Docker-compose  
+Поскольку мы же добавляли [репозитории Docker](#Устанавливаем-репозиторий) просто скачаем пакет командой 
