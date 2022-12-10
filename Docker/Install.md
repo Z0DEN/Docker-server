@@ -41,6 +41,7 @@ echo \
 ```
 sudo apt-get update
 ```
+
 Ошибка при запуске **apt-get update**?  
 ➥ Возможно, [umask](https://en.wikipedia.org/wiki/Umask) по умолчанию настроен неправильно, что препятствует обнаружению файла открытого ключа репозитория. Попробуйте предоставить разрешение на чтение для файла открытого ключа Docker перед обновлением индекса пакета:
 
@@ -48,8 +49,14 @@ sudo apt-get update
 sudo chmod a+r /etc/apt/keyrings/docker.gpg
 ```
 
-затем попробуйте команду снова
+Затем попробуйте команду снова
 
 ```
 sudo apt-get update
+```
+
+Устанавливаем последнюю версию Docker
+
+```
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 ```
