@@ -1,6 +1,6 @@
 # Подготовка
 
-### Обновляем пакеты -  
+### Обновляем пакеты  
 ➥ ca-certificates (цифровой документ заверения ssl сертификатов)  
 ➥ curl (client URL - программа командной строки, позволяющая взаимодействовать с серверами по протоколам имеющих синтаксис URL)  
 ➥ gnupg (GNU Privacy Guard - инструмент шифрования и создания цифровых подписей)  
@@ -30,6 +30,7 @@ sudo mkdir -p /etc/apt/keyrings
 ```
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 ```
+
 ### Устанавливаем репозиторий
 
 ```
@@ -56,6 +57,7 @@ sudo chmod a+r /etc/apt/keyrings/docker.gpg
 ```
 sudo apt-get update
 ```
+
 # Устанавливаем Docker
 
 ### Устанавливаем последнюю версию Docker
@@ -63,3 +65,16 @@ sudo apt-get update
 ```
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 ```
+
+### Добавим пользователя в группу Docker (необязательно)  
+➥ Выполните этот шаг, если хотите избежать ввода **sudo** при каждом запуске Docker.  
+➥ **Копипастим команду, незабывая вместо [USER] вписать своё имя пользовавтеля** 
+
+```
+sudo usermod -aG docker [USER]
+```
+
+### Проверим версию Docker
+```
+docker -v
+``` 
