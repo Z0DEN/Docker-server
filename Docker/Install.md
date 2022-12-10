@@ -80,8 +80,16 @@ sudo usermod -aG docker [USER]
 ```
 su - [USER]
 ```
+### Убедимся, что пользователь добавлен в группу docker, введя:
+```
+groups
+```
+![Image alt](https://github.com/Z0DEN/images/raw/main/images/Docker-installing/groups.png)
 
-### Проверим версию Docker
+### Проверим версию Docker  
+**[Последняя версия Docker](https://docs.docker.com/engine/release-notes/)**  
+На момент написания статьи последней версией являеться 20.10.21 
+
 ```
 docker -v
 ``` 
