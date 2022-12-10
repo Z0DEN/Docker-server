@@ -84,7 +84,7 @@ su - [USER]
 ```
 groups
 ```
-<img src="https://github.com/Z0DEN/images/blob/62307f633191d5b0a0e9dc9f52f23ddfbd292a06/Docker-installing/groups.png" width="75%" height="75%"/>
+<img src="https://github.com/Z0DEN/images/blob/62307f633191d5b0a0e9dc9f52f23ddfbd292a06/Docker-installing/groups.png" width="50%" height="50%"/>
 
 ### Проверим версию Docker  
 **[Последняя версия Docker](https://docs.docker.com/engine/release-notes/)**  
