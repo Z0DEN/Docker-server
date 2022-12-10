@@ -86,13 +86,22 @@ groups
 ```
 <img src="https://github.com/Z0DEN/images/blob/62307f633191d5b0a0e9dc9f52f23ddfbd292a06/Docker-installing/groups.png" width="65%" height="65%"/>
 
-### Проверим версию Docker  
+### Проверим успешность установки, а также актуальность версии Docker  
 **[Последняя версия Docker](https://docs.docker.com/engine/release-notes/)**  
-На момент написания статьи последней версией являеться 20.10.21 
 
 ```
 docker -v
 ``` 
 # Установка Docker-compose
-### Docker-compose  
-Поскольку мы же добавляли [репозитории Docker](#Устанавливаем-репозиторий) просто скачаем пакет командой 
+### Поскольку мы же добавляли ранее [репозитории Docker](#Создаем-папку-для-хранения-ключей) просто скачаем пакет командой
+
+```
+sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
+
+### Проверим успешность установки, а также актуальность версии Docker-compose  
+**[Последняя версия Docker-compose](https://docs.docker.com/compose/release-notes/)**
+
+```
+docker-compose -v
+```
