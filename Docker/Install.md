@@ -84,7 +84,7 @@ su - [USER]
 ```
 groups
 ```
-![Image alt](https://github.com/Z0DEN/images/raw/main/images/Docker-installing/groups.png)
+[Docker-installing/groups.png](https://github.com/Z0DEN/images/blob/62307f633191d5b0a0e9dc9f52f23ddfbd292a06/Docker-installing/groups.png)
 
 ### Проверим версию Docker  
 **[Последняя версия Docker](https://docs.docker.com/engine/release-notes/)**  
