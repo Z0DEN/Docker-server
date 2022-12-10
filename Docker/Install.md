@@ -28,3 +28,4 @@ GPG-ключ (также GnuPG и GNU Privacy Guard - инструмент ши�
 ```
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 ```
+srgsgsdg
