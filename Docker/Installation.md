@@ -87,7 +87,7 @@ groups
 <img src="https://github.com/Z0DEN/images/blob/62307f633191d5b0a0e9dc9f52f23ddfbd292a06/Docker-installing/groups.png" width="65%" height="65%"/>
 
 ### Проверим успешность установки, а также актуальность версии Docker  
-**[Последняя версия Docker](https://docs.docker.com/engine/release-notes/)**  
+⚡ **[Последняя версия Docker](https://docs.docker.com/engine/release-notes/)**  
 
 ```
 docker -v
@@ -100,7 +100,7 @@ sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-
 ```
 
 ### Проверим успешность установки, а также актуальность версии Docker-compose  
-**[Последняя версия Docker-compose](https://docs.docker.com/compose/release-notes/)**
+⚡ **[Последняя версия Docker-compose](https://docs.docker.com/compose/release-notes/)**
 
 ```
 docker-compose -v
