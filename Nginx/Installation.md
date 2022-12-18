@@ -11,19 +11,18 @@ sudo apt install dpkg-dev build-essential gnupg2 git gcc cmake libpcre3 libpcre3
 ### Добавляем в систему GPG ключ репозитория nginx
 ⚡ Импортируем официальный ключ, используемый `apt` для проверки подлинности пакетов:
 ```
-wget http://nginx.org/keys/nginx_signing.key
-apt-key add nginx_signing.key
+curl -L https://nginx.org/keys/nginx_signing.key | apt-key add -
 ```
 ### Добавим репозиторий Nginx  
-⚡ Откроем  файл `/etc/apt/sources.list` в редакторе линукс
+⚡ Создадим и откроем файл с репозиториями Nginx
 ```
 sudo nano /etc/apt/sources.list.d/nginx.list
 ```
 ### Редактируем список репозиториев
 ⚡ Добавляем в него записи:
 ```
-deb http://nginx.org/packages/mainline/debian/ bullseye nginx
-deb-src http://nginx.org/packages/mainline/debian/ bullseye nginx
+deb http://nginx.org/packages/ubuntu/ focal nginx
+deb-src http://nginx.org/packages/ubuntu/ focal nginx
 ```
 ### Сохраняем файл
 **`CTRL`** + **`O`**  
@@ -78,5 +77,5 @@ sudo nano debian/rules
 
 ### Компилируем и собираем Nginx
 ```
-dpkg-buildpackage -b -uc -us
+sudo dpkg-buildpackage -b -uc -us
 ```
