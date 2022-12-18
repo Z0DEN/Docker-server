@@ -218,3 +218,16 @@ http {
 sudo nginx -t
 ```
 <img src="https://github.com/Z0DEN/images/blob/5a752b0da2abf777c7ece91905c1c051def8117b/Nginx-installing/nginx-t.png" width="65%" height="65%"/>
+
+### Запускаем Nginx
+```
+sudo service nginx start
+```
+```
+sudo service nginx status
+```
+### Проверяем Brotli
+```
+curl -H 'Accept-Encoding: br' -I http://localhost
+```
+<img src="https://github.com/Z0DEN/images/blob/2759023c6e7f7e89684ea7a8f129f37a6c584ada/Nginx-installing/check_brotli.png" width="65%" height="65%"/>
