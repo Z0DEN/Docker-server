@@ -61,4 +61,11 @@ sudo nano debian/rules
 ⚡ `config.env.nginx`  
 ⚡ `config.env.nginx_debug`  
 
-<img src="https://github.com/Z0DEN/images/blob/14886a35b42aa868de8df230cd91770637c768f5/Nginx-installing/%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8%20%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D0%B0.png" width="65%" height="65%"/>
+<img src="https://github.com/Z0DEN/images/blob/07970df939b2923d3783818bab483c012dd1184b/Nginx-installing/blocks.png" width="65%" height="65%"/>
+
+### Добавим новый ключ после каждого `./configure`
+```
+--add-module=/usr/local/src/ngx_brotli
+```
+
+<img src="https://github.com/Z0DEN/images/blob/11fc3a569d8eca4d81c677c75940ab36848396b5/Nginx-installing/new-keys.png" width="65%" height="65%"/>
