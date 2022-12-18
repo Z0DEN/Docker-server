@@ -26,9 +26,10 @@ deb http://nginx.org/packages/mainline/debian/ bullseye nginx
 deb-src http://nginx.org/packages/mainline/debian/ bullseye nginx
 ```
 ### Сохраняем файл
-⚡ **CTRL** + **O**  
-⚡ **ENTER**  
-⚡ **CTRL** + **X**
+**`CTRL`** + **`O`**  
+**`ENTER`**  
+**`CTRL`** + **`X`**
+
 ### Обновляем репозитории
 ```
 sudo apt update -y
@@ -58,8 +59,8 @@ cd /usr/local/src/nginx-*/
 sudo nano debian/rules
 ```
 ### Найдем блоки:
-⚡ `config.env.nginx`  
-⚡ `config.env.nginx_debug`  
+**`config.env.nginx`**  
+**`config.env.nginx_debug`**  
 
 <img src="https://github.com/Z0DEN/images/blob/07970df939b2923d3783818bab483c012dd1184b/Nginx-installing/blocks.png" width="65%" height="65%"/>
 
@@ -71,9 +72,9 @@ sudo nano debian/rules
 <img src="https://github.com/Z0DEN/images/blob/11fc3a569d8eca4d81c677c75940ab36848396b5/Nginx-installing/new-keys.png" width="65%" height="65%"/>
 
 ### Сохраняем файл
-⚡ **`CTRL`** + **`O`**  
-⚡ **`ENTER`**  
-⚡ **`CTRL`** + **`X`**
+**`CTRL`** + **`O`**  
+**`ENTER`**  
+**`CTRL`** + **`X`**
 
 ### Компилируем и собираем Nginx
 ```
