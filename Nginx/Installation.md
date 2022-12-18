@@ -60,7 +60,7 @@ sudo nano debian/rules
 ```
 ### Найдем блоки:
 **`config.env.nginx`**  
-**`config.env.nginx_debug`**  
+**`config.env.nginx_debug`**
 
 <img src="https://github.com/Z0DEN/images/blob/07970df939b2923d3783818bab483c012dd1184b/Nginx-installing/blocks.png" width="65%" height="65%"/>
 
