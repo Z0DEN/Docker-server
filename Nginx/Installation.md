@@ -1,8 +1,4 @@
-# Цель
-## Поясняю за Nginx
-## Поясняю за Brotli
 # Подготовка
-
 ### Устанавливаем необходимые зависимости для сборки  
 ⚡ Практически всегда для работы программы необходимы определенные ресурсы. Потребность пакета ресурсах, находящихся в других пакетах называют зависимостью этого пакета от другого. Установим необходимые пакеты (зависимости):  
 ```
@@ -11,8 +7,9 @@ sudo apt install dpkg-dev build-essential gnupg2 git gcc cmake libpcre3 libpcre3
 ### Добавляем в систему GPG ключ репозитория nginx
 ⚡ Импортируем официальный ключ, используемый `apt` для проверки подлинности пакетов:
 ```
-wget http://nginx.org/keys/nginx_signing.key
-apt-key add nginx_signing.key
+cd /usr/local/src
+sudo wget http://nginx.org/keys/nginx_signing.key
+sudo apt-key add nginx_signing.key
 ```
 ### Добавим репозиторий Nginx  
 ⚡ Откроем  файл `/etc/apt/sources.list` в редакторе линукс
@@ -44,7 +41,7 @@ apt-get source nginx
 ```
 ### Ставим зависимости для сборки
 ```
-apt build-dep nginx -y
+sudo apt build-dep nginx -y
 ```
 ### Скачиваем модуль Brotli
 ```
@@ -89,7 +86,7 @@ ls /usr/local/src/*.deb
 
 ### Устанавливаем Nginx из deb-файлов
 ```
-sudo dpkg -i /usr/local/src/*.deb
+c
 ```
 # Настроим Nginx
 ### Настроим минимальный конфиг для Nginx
@@ -231,3 +228,4 @@ sudo service nginx status
 curl -H 'Accept-Encoding: br' -I http://localhost
 ```
 <img src="https://github.com/Z0DEN/images/blob/2759023c6e7f7e89684ea7a8f129f37a6c584ada/Nginx-installing/check_brotli.png" width="65%" height="65%"/>
+
