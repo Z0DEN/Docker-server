@@ -62,7 +62,7 @@ index index.html index.xml;
 cloudblesk.site
 ``` 
 **`ENTER`**  
-Вписываем свой домен  
+**`Вписываем свой домен`**   
 **`ENTER`**
 
 ### Сохраняем файл
