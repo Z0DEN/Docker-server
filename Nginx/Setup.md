@@ -1,6 +1,7 @@
 # Вебсайт
 ## `cloudblesk.site - домен моего сайта, его меняете на свой.`
-### Клонироуем репозиторий Github или сами создаём папку для сайта:
+# Расположение
+### Клонируем репозиторий Github или сами создаём папку для сайта:
 
 ```
 git clone https://github.com/Z0DEN/cloudblesk.site.git
@@ -16,7 +17,7 @@ mkdir -p sites-available/cloudblesk.site sites-enabled www/html
 ⚡ `sites-available` - для конфига сайтов  
 ⚡ `sites-enabled`- для символьной ссылки - удобное включение и выключение нужных сайтов  
 ⚡ `www` - для самого сайта
-
+# Сайт
 ### Создаём index.html файл сайта
 
 ```
@@ -79,8 +80,8 @@ sudo nginx -t
 ```
 # Файлы конфига `Nginx`
 
-### nginx.conf
-
-
-### default.conf
-----nginx.conf.d
+# nginx.conf
+nano(настройка)
+# default.conf
+mv
+nano(настройка)
