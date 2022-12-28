@@ -21,3 +21,17 @@ sudo nano /etc/memcached.conf
 ⬇⬇⬇⬇⬇⬇
 
 <img src="https://github.com/Z0DEN/images/blob/af057037c61e247e84121f125ffc73c3c0108668/Memcached/memcached-conf-after.png" width="65%" height="65%"/>
+
+### Сохраняем файл
+**`CTRL`** + **`O`**  
+**`ENTER`**  
+**`CTRL`** + **`X`**
+
+### Перезапускаем `Memcached`
+```
+sudo service memcached restart
+```
+### Установим расширение `Memcached`, чтобы использовать его в качестве сиситемы кэширования приложений `PHP`, таких как `Wordpress`
+```
+sudo apt install php-memcached
+```
