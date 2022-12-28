@@ -227,4 +227,3 @@ sudo service nginx status
 curl -H 'Accept-Encoding: br' -I http://localhost
 ```
 <img src="https://github.com/Z0DEN/images/blob/2759023c6e7f7e89684ea7a8f129f37a6c584ada/Nginx-installing/check_brotli.png" width="65%" height="65%"/>
-
