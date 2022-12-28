@@ -10,7 +10,14 @@ sudo service memcached status
 
 <img src="https://github.com/Z0DEN/images/blob/8aaae550e409fc059f80099d8b2d09e4ced307d0/Memcached/memcached.png" width="65%" height="65%"/>
 
-### Изменим конфигурацию `Memcached`:
+### Изменим конфигурацию `Memcached`
 ```
 sudo nano /etc/memcached.conf
 ```
+⚡ Заменим`-l 127.0.0.1` фактическим IP-адресом сервера:
+
+<img src="https://github.com/Z0DEN/images/blob/af057037c61e247e84121f125ffc73c3c0108668/Memcached/memcached-conf.png" width="65%" height="65%"/>
+
+⬇⬇⬇⬇⬇⬇
+
+<img src="https://github.com/Z0DEN/images/blob/af057037c61e247e84121f125ffc73c3c0108668/Memcached/memcached-conf-after.png" width="65%" height="65%"/>
