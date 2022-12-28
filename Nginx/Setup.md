@@ -83,5 +83,5 @@ sudo nginx -t
 # nginx.conf
 nano(настройка)
 # default.conf
-mv
+mv  
 nano(настройка)
