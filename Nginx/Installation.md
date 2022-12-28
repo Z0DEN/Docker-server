@@ -86,7 +86,7 @@ ls /usr/local/src/*.deb
 
 ### Устанавливаем Nginx из deb-файлов
 ```
-c
+sudo dpkg -i /usr/local/src/*.deb
 ```
 # Настроим Nginx
 ### Настроим минимальный конфиг для Nginx
