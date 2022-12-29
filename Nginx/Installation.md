@@ -107,17 +107,6 @@ include /home/BlesK/cloudblesk.site/sites-enabled/*.stream;
 
 http {
 
-server {
-listen       80;
-server_name  localhost;
-
-#access_log  /var/log/nginx/host.access.log  main;
-
-location / {
-root   home/BlesK/cloudblesk.site/www/cloudblesk.site/html/*;
-index  index.html index.htm;
-}
-
 # Virtual Hosts
 
 include /home/BlesK/cloudblesk.site/sites-enabled/*;
