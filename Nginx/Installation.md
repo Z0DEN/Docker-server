@@ -11,7 +11,10 @@ sudo apt install dpkg-dev build-essential gnupg2 git gcc cmake libpcre3 libpcre3
 ### Добавляем в систему GPG ключ репозитория nginx
 ⚡ Импортируем официальный ключ, используемый `apt` для проверки подлинности пакетов:
 ```
-cd /usr/local/src
+sudo mkdir /usr/local/nginx
+```
+```
+cd /usr/local/nginx
 sudo wget http://nginx.org/keys/nginx_signing.key
 sudo apt-key add nginx_signing.key
 ```
@@ -37,7 +40,7 @@ sudo apt update -y
 ```
 ### Скачиваем исходники Nginx
 ```
-cd /usr/local/src
+cd /usr/local/nginx
 sudo apt-get source nginx
 ```
 ### Ставим зависимости для сборки
@@ -50,7 +53,7 @@ sudo git clone --recursive https://github.com/google/ngx_brotli.git
 ```
 ### Обновляем правила сборки
 ```
-cd /usr/local/src/nginx-*/
+cd /usr/local/nginx/nginx-*/
 sudo nano debian/rules
 ```
 ### Найдем блоки:
@@ -61,7 +64,7 @@ sudo nano debian/rules
 
 ### Добавим новый ключ после каждого `./configure`
 ```
---add-module=/usr/local/src/ngx_brotli
+--add-module=/usr/local/nginx/ngx_brotli
 ```
 
 <img src="https://github.com/Z0DEN/images/blob/11fc3a569d8eca4d81c677c75940ab36848396b5/Nginx-installing/new-keys.png" width="65%" height="65%"/>
@@ -77,14 +80,14 @@ sudo dpkg-buildpackage -b -uc -us
 ```
 ### Проверяем **`.deb`** файлы
 ```
-ls /usr/local/src/*.deb
+ls /usr/local/nginx/*.deb
 ```
 
 <img src="https://github.com/Z0DEN/images/blob/59a586935767566e897ddc5d63f2df90670c680c/Nginx-installing/deb-files-check.png" width="65%" height="65%"/>
 
 ### Устанавливаем Nginx из deb-файлов
 ```
-sudo dpkg -i /usr/local/src/*.deb
+sudo dpkg -i /usr/local/nginx/*.deb
 ```
 # Настроим Nginx
 ### Настроим минимальный конфиг для Nginx
