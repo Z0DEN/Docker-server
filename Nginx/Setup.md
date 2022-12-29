@@ -29,10 +29,10 @@ nano cloudblesk.site/www/html/index.html
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
-<title>Welcome to example.com</title>
+<title>Welcome to cloudblesk.site</title>
 </head>
 <body>
-<h1>Success! example.com home page!</h1>
+<h1>Success! cloudblesk.site home page!</h1>
 </body>
 </html>
 ```
@@ -51,7 +51,7 @@ server {
 listen 80;
 listen [::]:80;
 
-server_name example.site www.example.site;
+server_name cloudblesk.site www.cloudblesk.site;
 root /cloudblesk.site/www/cloudblesk.site/html;
 index index.html index.xml;
 }
@@ -72,7 +72,7 @@ cloudblesk.site
 
 ### Создадим символьную ссылку для включения конфига:
 ```
-ln -s cloudblesk.site/sites-available/cloudblesk.site/cloudblesk.site.conf ~/cloudblesk.site/sites-enabled/
+ln -s cloudblesk.site/sites-available/cloudblesk.site/cloudblesk.site.conf home/BlesK/cloudblesk.site/sites-enabled/
 ```
 ### Проверяем конфиг nginx
 ```
@@ -88,4 +88,4 @@ sudo nano /etc/nginx/nginx.conf
 
 # default.conf
 mv  
-nano(настройка)
+nano cloudblesk.site/sites-available/cloudblesk.site/cloudblesk.site.conf
