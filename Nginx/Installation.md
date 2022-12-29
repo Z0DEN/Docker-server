@@ -38,10 +38,7 @@ sudo apt update -y
 ### Скачиваем исходники Nginx
 ```
 cd /usr/local/src
-```
-
-```
-apt-get source nginx
+sudo apt-get source nginx
 ```
 ### Ставим зависимости для сборки
 ```
@@ -54,9 +51,6 @@ sudo git clone --recursive https://github.com/google/ngx_brotli.git
 ### Обновляем правила сборки
 ```
 cd /usr/local/src/nginx-*/
-```
-
-```
 sudo nano debian/rules
 ```
 ### Найдем блоки:
