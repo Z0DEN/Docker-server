@@ -88,4 +88,4 @@ sudo nano /etc/nginx/nginx.conf
 
 # default.conf
 mv  
-nano cloudblesk.site/sites-available/cloudblesk.site/cloudblesk.site.conf
+nano server_to_clone/nginx/config/default.conf
