@@ -26,13 +26,13 @@ nano cloudblesk.site/www/html/index.html
 ### Вписываем в него следующее:
 ```
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en" dir="ltr">
 <head>
-<title>cloudblesk.site</title>
 <meta charset="utf-8">
+<title>Welcome to example.com</title>
 </head>
 <body>
-<h1>cloudblesk.site</h1>
+<h1>Success! example.com home page!</h1>
 </body>
 </html>
 ```
@@ -81,7 +81,11 @@ sudo nginx -t
 # Файлы конфига `Nginx`
 
 # nginx.conf
-nano(настройка)
+### Откроем основной конфиг `nginx`
+```
+sudo nano /etc/nginx/nginx.conf
+```
+
 # default.conf
 mv  
 nano(настройка)

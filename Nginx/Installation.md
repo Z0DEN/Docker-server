@@ -100,12 +100,21 @@ worker_processes auto;
 pid /var/run/nginx.pid;
 
 events {
-worker_connections 768;
+worker_connections 1024;
 }
 
-include /etc/nginx/sites-enabled/*.stream;
+include /home/BlesK/cloudblesk.site/sites-enabled/*.stream;
 
 http {
+
+# Virtual Hosts
+
+include /home/BlesK/cloudblesk.site/sites-enabled/*;
+
+# Configs
+
+include /home/BlesK/server_to_clone/nginx/config/*.conf;
+include /usr/share/nginx/modules/*.conf;
 
 # Basic
 
@@ -199,15 +208,6 @@ application/xhtml+xml
 text/javascript
 application/x-javascript
 text/$;
-
-# Virtual Hosts
-
-include /etc/nginx/sites-enabled/*;
-
-# Configs
-
-include /etc/nginx/conf.d/*.conf;
-include /usr/share/nginx/modules/*.conf;
 }
 ```
 ### Проверяем конфиг nginx
