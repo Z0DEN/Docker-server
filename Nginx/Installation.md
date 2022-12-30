@@ -1,4 +1,6 @@
 # Подготовка
+## Все конфигурации можно найти здесь:
+
 ### Обновим репозитории Linux
 ```
 sudo apt-get update
@@ -109,11 +111,11 @@ http {
 
 # Virtual Hosts
 
-include /home/BlesK/cloudblesk.site/sites-enabled/*;
+include /home/BlesK/cloudblesk.site/sites-enabled/cloudblesk.site.conf;
 
 # Configs
 
-include /home/BlesK/server_to_clone/nginx/config/*.conf;
+include /home/BlesK/server_to_clone/nginx/config/.conf;
 include /usr/share/nginx/modules/*.conf;
 
 # Basic
