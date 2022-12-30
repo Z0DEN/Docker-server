@@ -1,5 +1,16 @@
 # Docker-server
 ## ⚡ Создание кластера распределения нагрузки на стеке LEMP
+# Порядок выполнения
+## Docker
+### 1. [installation](https://github.com/Z0DEN/Docker-server/blob/7415bd16205cb48d3fb8d2251f67af9a511abe7e/Docker/Installation.md#L1)
+## Nginx
+### 1. [installation](https://github.com/Z0DEN/Docker-server/blob/7415bd16205cb48d3fb8d2251f67af9a511abe7e/Nginx/Installation.md#L14)
+### 2. [setup](https://github.com/Z0DEN/Docker-server/blob/7415bd16205cb48d3fb8d2251f67af9a511abe7e/Nginx/Setup.md)
+### 3. SSL-sertificate
+### Mysql
+### 1.
+### 2.
+### 3.
 # Конфиги
 ## Docker
 ## Nginx
