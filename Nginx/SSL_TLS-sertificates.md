@@ -26,3 +26,65 @@ ssl_prefer_server_ciphers off;
 add_header Strict-Transport-Security "max-age=63072000" always;
 ```
 # Устанавливаем `sertbot`
+```
+sudo apt install -y certbot
+```
+```
+sudo apt-get install python3-certbot-nginx
+```
+Va7G37ba0dh3x9r
+### Выпускаем сертификат
+```
+sudo certbot certonly --nginx
+```
+### настроим конфиг сайта
+```
+nano cloudblesk.site/sites-available/cloudblesk.site/cloudblesk.site.conf
+```
+### Стираем всё
+**`CTRL`** + **`del`**  
+или  
+**`CTRL`** + **`k`**
+### Вписываем новый конфиг
+```
+server {
+listen 80;
+listen [::]:80;
+
+server_name cloudblesk.site www.cloudblesk.site;
+return 301 https://cloudblesk.site$request_uri;
+}
+
+server {
+listen 443 ssl http2;
+listen [::]:443 ssl http2;
+
+server_name www.cloudblesk.site;
+return 301 https://cloudblesk.site$request_uri;
+
+ssl_certificate /etc/letsencrypt/live/cloudblesk.site/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/cloudblesk.site/privkey.pem;
+ssl_trusted_certificate /etc/letsencrypt/live/cloudblesk.site/chain.pem;
+
+include /home/BlesK/server_to_clone/nginx/snippets/ssl-params.conf;
+}
+
+server {
+listen 443 ssl http2;
+listen [::]:443 ssl http2;
+
+server_name cloudblesk.site;
+root /home/BlesK/cloudblesk.site/www/cloudblesk.site/html;
+index index.html index.php index.xml;
+
+ssl_certificate /etc/letsencrypt/live/cloudblesk.site/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/cloudblesk.site/privkey.pem;
+ssl_trusted_certificate /etc/letsencrypt/live/cloudblesk.site/chain.pem;
+
+include /home/BlesK/server_to_clone/nginx/snippets/ssl-params.conf;
+}
+```
+
+
+addilyn.ns.cloudflare.com
+phil.ns.cloudflare.com
