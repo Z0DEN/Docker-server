@@ -25,14 +25,13 @@ ssl_prefer_server_ciphers off;
 
 add_header Strict-Transport-Security "max-age=63072000" always;
 ```
-# Устанавливаем `sertbot`
+# Устанавливаем `certbot`
 ```
 sudo apt install -y certbot
 ```
 ```
 sudo apt-get install python3-certbot-nginx
 ```
-Va7G37ba0dh3x9r
 ### Выпускаем сертификат
 ```
 sudo certbot certonly --nginx
