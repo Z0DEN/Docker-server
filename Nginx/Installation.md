@@ -105,17 +105,17 @@ events {
 worker_connections 1024;
 }
 
-include /home/BlesK/cloudblesk.site/sites-enabled/*.stream;
+include /home/main/cloudblesk.site/sites-enabled/*.stream;
 
 http {
 
 # Virtual Hosts
 
-include /home/BlesK/cloudblesk.site/sites-enabled/cloudblesk.site.conf;
+include /home/main/cloudblesk.site/sites-enabled/cloudblesk.site.conf;
 
 # Configs
 
-include /home/BlesK/server_to_clone/nginx/config/.conf;
+include /home/main/repo-to-clone/nginx/config/*.conf;
 include /usr/share/nginx/modules/*.conf;
 
 # Basic
@@ -212,6 +212,8 @@ application/x-javascript
 text/$;
 }
 ```
+# Переходим к [`Setup`](https://github.com/Z0DEN/Docker-server/blob/faad2e27e4ddd944b8751736b5d02a551d01b6f9/Nginx/Setup.md)
+
 ### Проверяем конфиг nginx
 ```
 sudo nginx -t
