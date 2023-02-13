@@ -5,7 +5,7 @@ sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
 ```
 ### Создадим папку для сниппетов
 ```
-cd /home/BlesK/server_to_clone/nginx
+cd /home/main/repo-to-clone/nginx
 mkdir snippets
 ```
 ### Создаем сниппет для SSL
@@ -27,10 +27,7 @@ add_header Strict-Transport-Security "max-age=63072000" always;
 ```
 # Устанавливаем `certbot`
 ```
-sudo apt install -y certbot
-```
-```
-sudo apt-get install python3-certbot-nginx
+sudo apt-get install certbot python3-certbot-nginx
 ```
 ### Выпускаем сертификат
 ```
