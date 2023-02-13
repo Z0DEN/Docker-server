@@ -6,7 +6,7 @@ listen 80;
 listen [::]:80;
 
 server_name cloudblesk.site www.cloudblesk.site;
-root /home/BlesK/cloudblesk.site/www/cloudblesk.site/html;
+root /home/main/cloudblesk.site/www/cloudblesk.site/html;
 index index.html index.php index.xml;
 }
 ```

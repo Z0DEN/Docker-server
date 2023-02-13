@@ -8,7 +8,7 @@ server_name  localhost;
 #access_log  /var/log/nginx/host.access.log  main;
 
 location / {
-root   home/BlesK/cloudblesk.site/www/cloudblesk.site/html;
+root   home/main/cloudblesk.site/www/cloudblesk.site/html;
 index  index.html index.php index.htm;
 }
 
@@ -18,7 +18,7 @@ index  index.html index.php index.htm;
 #
 error_page   500 502 503 504  /50x.html;
 location = /50x.html {
-root    home/BlesK/cloudblesk.site/www/cloudblesk.site/error_pages/*;
+root    home/main/cloudblesk.site/www/cloudblesk.site/error_pages/*;
 }
 # proxy the PHP scripts to Apache listening on 127.0.0.1:80
 #

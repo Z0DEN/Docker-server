@@ -9,17 +9,17 @@ events {
 worker_connections 1024;
 }
 
-include /home/BlesK/cloudblesk.site/sites-enabled/*.stream;
+include /home/main/cloudblesk.site/sites-enabled/*.stream;
 
 http {
 
 # Virtual Hosts
 
-include /home/BlesK/cloudblesk.site/sites-enabled/*;
+include /home/main/cloudblesk.site/sites-enabled/*;
 
 # Configs
 
-include /home/BlesK/server_to_clone/nginx/config/*.conf;
+include /home/main/server_to_clone/nginx/config/*.conf;
 include /usr/share/nginx/modules/*.conf;
 
 # Basic
