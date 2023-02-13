@@ -43,7 +43,7 @@ sudo nano /home/BlesK/cloudblesk.site/www/cloudblesk.site/html/index.html
 
 ### Создадим конфигурационный файл сайта
 ```
-sudo nano /home/BlesK/cloudblesk.site/sites-available/cloudblesk.site/cloudblesk.site.conf
+sudo nano /home/main/cloudblesk.site/sites-available/cloudblesk.site/cloudblesk.site.conf
 ``` 
 ### Вписываем в него следующее:
 ```
@@ -64,7 +64,7 @@ index index.html index.php index.xml;
 
 ### Создадим символьную ссылку для включения конфига:
 ```
-sudo ln -s /home/BlesK/cloudblesk.site/sites-available/cloudblesk.site/cloudblesk.site.conf /home/BlesK/cloudblesk.site/sites-enabled/
+sudo ln -s /home/main/cloudblesk.site/sites-available/cloudblesk.site/cloudblesk.site.conf /home/main/cloudblesk.site/sites-enabled/
 ```
 ### Проверяем конфиг nginx
 ```
@@ -72,11 +72,11 @@ sudo nginx -t
 ```
 # Файл конфига `default.conf`
 ```
-mkdir server_to_clone
+mkdir repo-to-clone
 ```
 ```
-sudo mv /etc/nginx/conf.d/default.conf /home/BlesK/server_to_clone/nginx/config/
-nano server_to_clone/nginx/config/default.conf
+sudo mv /etc/nginx/conf.d/default.conf /home/main/repo-to-clone/nginx/config/
+nano repo-to-clone/nginx/config/default.conf
 ```
 
 ### Настроим `default.conf`:
@@ -88,7 +88,7 @@ server_name  localhost;
 #access_log  /var/log/nginx/host.access.log  main;
 
 location / {
-root   home/BlesK/cloudblesk.site/www/cloudblesk.site/html;
+root   home/main/cloudblesk.site/www/cloudblesk.site/html;
 index  index.html index.php index.htm;
 }
 
@@ -98,7 +98,7 @@ index  index.html index.php index.htm;
 #
 error_page   500 502 503 504  /50x.html;
 location = /50x.html {
-root    home/BlesK/cloudblesk.site/www/cloudblesk.site/error_pages/*;
+root    home/main/cloudblesk.site/www/cloudblesk.site/error_pages/*;
 }
 # proxy the PHP scripts to Apache listening on 127.0.0.1:80
 #
