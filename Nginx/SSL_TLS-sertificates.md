@@ -62,7 +62,7 @@ ssl_certificate /etc/letsencrypt/live/cloudblesk.site/fullchain.pem;
 ssl_certificate_key /etc/letsencrypt/live/cloudblesk.site/privkey.pem;
 ssl_trusted_certificate /etc/letsencrypt/live/cloudblesk.site/chain.pem;
 
-include /home/BlesK/server_to_clone/nginx/snippets/ssl-params.conf;
+include /home/main/repo-to-clone/nginx/snippets/ssl-params.conf;
 }
 
 server {
@@ -70,13 +70,13 @@ listen 443 ssl http2;
 listen [::]:443 ssl http2;
 
 server_name cloudblesk.site;
-root /home/BlesK/cloudblesk.site/www/cloudblesk.site/html;
+root /home/main/cloudblesk.site/www/cloudblesk.site/html;
 index index.html index.php index.xml;
 
 ssl_certificate /etc/letsencrypt/live/cloudblesk.site/fullchain.pem;
 ssl_certificate_key /etc/letsencrypt/live/cloudblesk.site/privkey.pem;
 ssl_trusted_certificate /etc/letsencrypt/live/cloudblesk.site/chain.pem;
 
-include /home/BlesK/server_to_clone/nginx/snippets/ssl-params.conf;
+include /home/main/repo-to-clone/nginx/snippets/ssl-params.conf;
 }
 ```
