@@ -21,7 +21,7 @@ mkdir -p sites-available/cloudblesk.site sites-enabled www/html
 ### Создаём index.html файл сайта
 
 ```
-sudo nano /home/BlesK/cloudblesk.site/www/cloudblesk.site/html/index.html
+sudo nano /home/main/cloudblesk.site/www/cloudblesk.site/html/index.html
 ```
 ### Вписываем в него следующее:
 ```
@@ -52,7 +52,7 @@ listen 80;
 listen [::]:80;
 
 server_name cloudblesk.site www.cloudblesk.site;
-root /home/BlesK/cloudblesk.site/www/cloudblesk.site/html;
+root /home/main/cloudblesk.site/www/cloudblesk.site/html;
 index index.html index.php index.xml;
 }
 ```
@@ -98,7 +98,7 @@ index  index.html index.php index.htm;
 #
 error_page   500 502 503 504  /50x.html;
 location = /50x.html {
-root    home/main/cloudblesk.site/www/cloudblesk.site/error_pages/*;
+root    home/BlesK/cloudblesk.site/www/cloudblesk.site/error_pages/*;
 }
 # proxy the PHP scripts to Apache listening on 127.0.0.1:80
 #
