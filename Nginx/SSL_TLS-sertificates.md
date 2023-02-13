@@ -80,7 +80,3 @@ ssl_trusted_certificate /etc/letsencrypt/live/cloudblesk.site/chain.pem;
 include /home/BlesK/server_to_clone/nginx/snippets/ssl-params.conf;
 }
 ```
-
-
-addilyn.ns.cloudflare.com
-phil.ns.cloudflare.com
