@@ -1,7 +1,7 @@
 # Вебсайт
 ## `cloudblesk.site - домен моего сайта, его меняете на свой.`
 # Расположение
-### Клонируем репозиторий Github или сами создаём папку для сайта:
+### 1. Клонируем репозиторий Github или сами создаём папку для сайта:
 
 ```
 git clone https://github.com/Z0DEN/cloudblesk.site.git
@@ -18,12 +18,12 @@ mkdir -p sites-available/cloudblesk.site sites-enabled www/html
 ⚡ `sites-enabled`- для символьной ссылки - удобное включение и выключение нужных сайтов  
 ⚡ `www` - для самого сайта
 # Сайт
-### Создаём index.html файл сайта
+### 1. Создаём index.html файл сайта
 
 ```
 sudo nano /home/main/cloudblesk.site/www/cloudblesk.site/html/index.html
 ```
-### Вписываем в него следующее:
+### 2. Вписываем в него следующее:
 ```
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -41,11 +41,11 @@ sudo nano /home/main/cloudblesk.site/www/cloudblesk.site/html/index.html
 **`ENTER`**  
 **`CTRL`** + **`X`**
 
-### Создадим конфигурационный файл сайта
+### 3. Создадим конфигурационный файл сайта
 ```
 sudo nano /home/main/cloudblesk.site/sites-available/cloudblesk.site/cloudblesk.site.conf
 ``` 
-### Вписываем в него следующее:
+### 4. Вписываем в него следующее:
 ```
 server {
 listen 80;
@@ -62,11 +62,11 @@ index index.html index.php index.xml;
 **`ENTER`**  
 **`CTRL`** + **`X`**
 
-### Создадим символьную ссылку для включения конфига:
+### 5. Создадим символьную ссылку для включения конфига:
 ```
 sudo ln -s /home/main/cloudblesk.site/sites-available/cloudblesk.site/cloudblesk.site.conf /home/main/cloudblesk.site/sites-enabled/
 ```
-### Проверяем конфиг nginx
+### 6. Проверяем конфиг nginx
 ```
 sudo nginx -t
 ```
@@ -79,7 +79,7 @@ sudo mv /etc/nginx/conf.d/default.conf /home/main/repo-to-clone/nginx/config/
 nano repo-to-clone/nginx/config/default.conf
 ```
 
-### Настроим `default.conf`:
+### 1. Настроим `default.conf`:
 ```
 server {
 listen       80;

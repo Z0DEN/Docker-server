@@ -1,14 +1,14 @@
 # Добавление SSL/TLS сертификатов на сайт.
-### Генерация SSL ключ
+### 1. Генерация SSL ключ
 ```
 sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
 ```
-### Создадим папку для сниппетов
+### 2. Создадим папку для сниппетов
 ```
 cd /home/main/repo-to-clone/nginx
 mkdir snippets
 ```
-### Создаем сниппет для SSL
+### 3. Создаем сниппет для SSL
 ```
 nano ssl-params.conf
 ```
@@ -25,15 +25,15 @@ ssl_prefer_server_ciphers off;
 
 add_header Strict-Transport-Security "max-age=63072000" always;
 ```
-# Устанавливаем `certbot`
+# 4. Устанавливаем `certbot`
 ```
 sudo apt-get install certbot python3-certbot-nginx
 ```
-### Выпускаем сертификат
+### 5. Выпускаем сертификат
 ```
 sudo certbot certonly --nginx
 ```
-### настроим конфиг сайта
+### 6. настроим конфиг сайта
 ```
 nano cloudblesk.site/sites-available/cloudblesk.site/cloudblesk.site.conf
 ```
@@ -41,7 +41,7 @@ nano cloudblesk.site/sites-available/cloudblesk.site/cloudblesk.site.conf
 **`CTRL`** + **`del`**  
 или  
 **`CTRL`** + **`k`**
-### Вписываем новый конфиг
+### 7. Вписываем новый конфиг
 ```
 server {
 listen 80;

@@ -1,16 +1,16 @@
 # Подготовка
-## Все конфигурации можно найти здесь:
+## Все конфиги можно найти здесь: https://github.com/Z0DEN/Docker-server/tree/main/Nginx/configs
 
-### Обновим репозитории Linux
+### 1. Обновим репозитории Linux
 ```
 sudo apt-get update
 ```
-### Устанавливаем необходимые зависимости для сборки  
+### 2. Устанавливаем необходимые зависимости для сборки  
 ⚡ Практически всегда для работы программы необходимы определенные ресурсы. Потребность пакета ресурсах, находящихся в других пакетах называют зависимостью этого пакета от другого. Установим необходимые пакеты (зависимости):  
 ```
 sudo apt install dpkg-dev build-essential gnupg2 git gcc cmake libpcre3 libpcre3-dev zlib1g zlib1g-dev openssl libssl-dev curl unzip -y
 ```
-### Добавляем в систему GPG ключ репозитория nginx
+### 3. Добавляем в систему GPG ключ репозитория nginx
 ⚡ Импортируем официальный ключ, используемый `apt` для проверки подлинности пакетов:
 ```
 sudo mkdir /usr/local/nginx
@@ -20,12 +20,12 @@ cd /usr/local/nginx
 sudo wget http://nginx.org/keys/nginx_signing.key
 sudo apt-key add nginx_signing.key
 ```
-### Добавим репозиторий Nginx  
+### 4. Добавим репозиторий Nginx  
 ⚡ Откроем  файл `/etc/apt/sources.list` в редакторе линукс
 ```
 sudo nano /etc/apt/sources.list.d/nginx.list
 ```
-### Редактируем список репозиториев
+### 5. Редактируем список репозиториев
 ⚡ Добавляем в него записи:
 ```
 deb http://nginx.org/packages/mainline/debian/ bullseye nginx
@@ -36,24 +36,24 @@ deb-src http://nginx.org/packages/mainline/debian/ bullseye nginx
 **`ENTER`**  
 **`CTRL`** + **`X`**
 
-### Обновляем репозитории
+### 6. Обновляем репозитории
 ```
 sudo apt update -y
 ```
-### Скачиваем исходники Nginx
+### 7. Скачиваем исходники Nginx
 ```
 cd /usr/local/nginx
 sudo apt-get source nginx
 ```
-### Ставим зависимости для сборки
+### 8. Ставим зависимости для сборки
 ```
 sudo apt build-dep nginx -y
 ```
-### Скачиваем модуль Brotli
+### 9. Скачиваем модуль Brotli
 ```
 sudo git clone --recursive https://github.com/google/ngx_brotli.git
 ```
-### Обновляем правила сборки
+### 10. Обновляем правила сборки
 ```
 cd /usr/local/nginx/nginx-*/
 sudo nano debian/rules
@@ -76,7 +76,7 @@ sudo nano debian/rules
 **`ENTER`**  
 **`CTRL`** + **`X`**
 
-### Компилируем и собираем Nginx
+### 11. Компилируем и собираем Nginx
 ```
 sudo dpkg-buildpackage -b -uc -us
 ```
@@ -87,12 +87,12 @@ ls /usr/local/nginx/*.deb
 
 <img src="https://github.com/Z0DEN/images/blob/59a586935767566e897ddc5d63f2df90670c680c/Nginx-installing/deb-files-check.png" width="65%" height="65%"/>
 
-### Устанавливаем Nginx из deb-файлов
+### 13. Устанавливаем Nginx из deb-файлов
 ```
 sudo dpkg -i /usr/local/nginx/*.deb
 ```
 # Настроим Nginx
-### Настроим минимальный конфиг для Nginx
+### 1. Настроим минимальный конфиг для Nginx
 ```
 sudo nano /etc/nginx/nginx.conf
 ```

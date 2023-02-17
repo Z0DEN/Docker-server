@@ -1,6 +1,6 @@
 # Подготовка
 
-### Обновляем пакеты  
+### 1. Обновляем пакеты  
 ⚡ ca-certificates (цифровой документ заверения ssl сертификатов)  
 ⚡ curl (client URL - программа командной строки, позволяющая взаимодействовать с серверами по протоколам имеющих синтаксис URL)  
 ⚡ gnupg (GNU Privacy Guard - инструмент шифрования и создания цифровых подписей)  
@@ -18,20 +18,20 @@ sudo apt-get install \
     lsb-release
 ```
 
-### Создаем папку для хранения ключей
+### 2. Создаем папку для хранения ключей
 
 ```
 sudo mkdir -p /etc/apt/keyrings
 ```
 
-### Добавляем официальный GPG-ключ Docker  
+### 3. Добавляем официальный GPG-ключ Docker  
 ⚡ GPG-ключ (также GnuPG и GNU Privacy Guard - инструмент шифрования и создания цифровых подписей)
 
 ```
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 ```
 
-### Устанавливаем репозиторий
+### 4. Устанавливаем репозиторий
 
 ```
 echo \
@@ -39,7 +39,7 @@ echo \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
 
-### Обновляем пакеты
+### 5. Обновляем пакеты
 
 ```
 sudo apt-get update
@@ -60,7 +60,7 @@ sudo apt-get update
 
 # Устанавливаем Docker
 
-### Устанавливаем последнюю версию Docker-Engine
+### 1. Устанавливаем последнюю версию Docker-Engine
 
 ```
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
@@ -86,20 +86,20 @@ groups
 ```
 <img src="https://github.com/Z0DEN/images/blob/62307f633191d5b0a0e9dc9f52f23ddfbd292a06/Docker-installing/groups.png" width="65%" height="65%"/>
 
-### Проверим успешность установки, а также актуальность версии Docker  
+### 2. Проверим успешность установки, а также актуальность версии Docker  
 ⚡ **[Последняя версия Docker](https://docs.docker.com/engine/release-notes/)**  
 
 ```
 docker -v
 ``` 
 # Установка Docker-compose
-### Поскольку мы же добавляли ранее [репозитории Docker](#Создаем-папку-для-хранения-ключей) просто скачаем пакет командой
+### 1. Поскольку мы же добавляли ранее [репозитории Docker](#Создаем-папку-для-хранения-ключей) просто скачаем пакет командой
 
 ```
 sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ```
 
-### Проверим успешность установки, а также актуальность версии Docker-compose  
+### 2. Проверим успешность установки, а также актуальность версии Docker-compose  
 ⚡ **[Последняя версия Docker-compose](https://docs.docker.com/compose/release-notes/)**
 
 ```
