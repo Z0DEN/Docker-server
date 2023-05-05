@@ -31,10 +31,6 @@ GRANT ALL PRIVILEGES ON DATABASE django_project TO django_user;
 ```
 \q
 ```
-## Создадим пользователя адмнистратора
-```
-./manage.py createsuperuser
-```
 ### Tеперь настройка Postgres завершена, и Django может подключаться к базе данных и управлять своей информацией в базе данных.
 ## Обновим `pip`
 ```
@@ -140,4 +136,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 ```
 ```
 ./manage.py migrate
+```
+## Создадим пользователя адмнистратора
+```
+./manage.py createsuperuser
 ```
