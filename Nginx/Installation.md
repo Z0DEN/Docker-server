@@ -55,7 +55,7 @@ sudo git clone --recursive https://github.com/google/ngx_brotli.git
 ```
 ### 10. Обновляем правила сборки
 ```
-cd /usr/local/nginx/nginx-*/
+cd /usr/local/nginx/nginx-1*/
 sudo nano debian/rules
 ```
 ### Найдем блоки:
