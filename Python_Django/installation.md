@@ -141,3 +141,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 ```
 ./manage.py createsuperuser
 ```
+## Обновим настройки сайта
+```
+sudo nano cloudblesk.site/sites-enabled/cloudblesk.site.conf
+```
+### Добавим в конец:
+```
+location /api/ {
+proxy_set_header Host $host;
+proxy_set_header X-Real-IP $remote_addr;
+}
+```
