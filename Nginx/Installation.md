@@ -8,7 +8,7 @@ sudo apt-get update
 ### 2. Устанавливаем необходимые зависимости для сборки  
 ⚡ Практически всегда для работы программы необходимы определенные ресурсы. Потребность пакета ресурсах, находящихся в других пакетах называют зависимостью этого пакета от другого. Установим необходимые пакеты (зависимости):  
 ```
-sudo apt install dpkg-dev build-essential gnupg2 git gcc cmake libpcre3 libpcre3-dev zlib1g zlib1g-dev openssl libssl-dev curl unzip -y
+sudo apt install dpkg-dev uuid-dev build-essential gnupg2 git gcc cmake libpcre3 libpcre3-dev zlib1g zlib1g-dev openssl libssl-dev curl unzip -y
 ```
 ### 3. Добавляем в систему GPG ключ репозитория nginx
 ⚡ Импортируем официальный ключ, используемый `apt` для проверки подлинности пакетов:
