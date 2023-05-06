@@ -61,3 +61,14 @@ sudo chown main:main /run/daphne
 ```
 daphne -b 0.0.0.0 -p 8000 -u /run/daphne/daphne.sock cloud.asgi:application
 ```
+
+## Траблшутинг
+```
+pip install attrs
+```
+```
+pip install twisted
+```
+```
+pip install twisted[http2]
+```
