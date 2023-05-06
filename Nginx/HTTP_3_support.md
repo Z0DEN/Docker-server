@@ -39,4 +39,33 @@ sudo cmake ../
 sudo make -j 8
 ```
 ## Добавление `QUIC` в исходники
-
+```
+cd /usr/local/nginx/nginx-1*/
+sudo nano debian/rules
+```
+### нас интересуют 2 секции этого файла: 
+1. config.status.nginx: config.env.nginx 
+2. config.status.nginx_debug: config.env.nginx_debug
+### Перед `--with-cc-opt="$(CFLAGS)"` добавить:
+```
+--with-http_v3_module --with-stream_quic_module
+```
+### После `--with-ld-opt="$(LDFLAGS)"` добавить:
+```
+--with-cc-opt="-I../modules/libressl/include $(CFLAGS)" --with-ld-opt="-L../modules/libressl/build/ssl -L../modules/libressl/build/crypto $(LDFLAGS)"
+```
+### Теперь создадим эту папку modules
+```
+cd /usr/local/nginx/nginx-1.23.4/debian
+```
+```
+sudo mkdir modules
+```
+### Теперь создадим символьную ссылку на `libressl`
+```
+cd modules
+```
+```
+ln -s -r /usr/local/nginx/libressl-3.7.0 libressl
+```
+## Возвращаемся в Installation
