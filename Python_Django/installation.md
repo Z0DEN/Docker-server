@@ -5,7 +5,7 @@ sudo apt update
 ```
 sudo apt install python3-pip python3-dev python3-venv libpq-dev postgresql postgresql-contrib
 ```
-ALTER DATABASE Django_project OWNER TO Django_user;
+
 ## Настроим `PostgreSQL`:
 ```
 sudo -u postgres psql
@@ -97,13 +97,6 @@ source ~/.bashrc
 django-admin startproject PROJECT_NAME
 ```
 
-## 
-
-### В случае проблем может сработать команда:
-```
-ALTER DATABASE Django_project OWNER TO Django_user;
-```
-
 ## Изменим настройки проекта
 ### Найдем папку `settings.py`
 ```
@@ -136,6 +129,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 ```
 ```
 ./manage.py migrate
+```
+### В случае проблем может сработать команда:
+```
+ALTER DATABASE Django_project OWNER TO Django_user;
 ```
 ## Создадим пользователя адмнистратора
 ```

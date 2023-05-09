@@ -61,7 +61,50 @@ sudo chown main:main /run/daphne
 ```
 daphne -b 0.0.0.0 -p 8000 -u /run/daphne/daphne.sock cloud.asgi:application
 ```
+## Установим Supervisor
+### Supervisor - это системный инструмент, который позволяет управлять процессами в фоне, а также автоматически запускать или перезапускать их при необходимости.
 
+```
+sudo apt-get update
+sudo apt-get install supervisor
+```
+
+### Создадим конфигурационный файл для Django приложения
+```
+sudo nano /etc/supervisor/conf.d/django_app.conf
+```
+```
+[program:my-django-app]
+
+directory=/home/main/cloudblesk.site/cloud/
+
+command=daphne --access-log /var/log/daphne/access.log --proxy-headers cloud.asgi:application -b 127.0.0.1 -p 8000
+
+autostart=true
+autorestart=true
+
+stderr_logfile=/var/log/my-django-app.err.log
+stdout_logfile=/var/log/my-django-app.out.log
+
+user=main
+```
+
+### Создадим папки для логов
+```
+sudo mkdir -p /var/log/daphne
+```
+```
+sudo chmod 777 /var/log/daphne
+```
+
+### Перезапустим Supervisor
+```
+sudo service supervisor restart
+```
+Проверим его работу
+```
+sudo supervisorctl status
+```
 ## Траблшутинг
 ```
 pip install attrs
