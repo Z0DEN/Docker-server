@@ -5,7 +5,7 @@ sudo apt update
 ```
 sudo apt install python3-pip python3-dev python3-venv libpq-dev postgresql postgresql-contrib
 ```
-ALTER DATABASE Django_project OWNER TO Django_user;
+
 ## Настроим `PostgreSQL`:
 ```
 sudo -u postgres psql
@@ -30,10 +30,6 @@ GRANT ALL PRIVILEGES ON DATABASE django_project TO django_user;
 ```
 ```
 \q
-```
-## Создадим пользователя адмнистратора
-```
-./manage.py createsuperuser
 ```
 ### Tеперь настройка Postgres завершена, и Django может подключаться к базе данных и управлять своей информацией в базе данных.
 ## Обновим `pip`
@@ -101,13 +97,6 @@ source ~/.bashrc
 django-admin startproject PROJECT_NAME
 ```
 
-## 
-
-### В случае проблем может сработать команда:
-```
-ALTER DATABASE Django_project OWNER TO Django_user;
-```
-
 ## Изменим настройки проекта
 ### Найдем папку `settings.py`
 ```
@@ -140,4 +129,23 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 ```
 ```
 ./manage.py migrate
+```
+### В случае проблем может сработать команда:
+```
+ALTER DATABASE Django_project OWNER TO Django_user;
+```
+## Создадим пользователя адмнистратора
+```
+./manage.py createsuperuser
+```
+## Обновим настройки сайта
+```
+sudo nano cloudblesk.site/sites-enabled/cloudblesk.site.conf
+```
+### Добавим в конец:
+```
+location /api/ {
+proxy_set_header Host $host;
+proxy_set_header X-Real-IP $remote_addr;
+}
 ```
