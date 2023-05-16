@@ -57,7 +57,27 @@ sudo apt build-dep nginx -y
 ```
 sudo git clone --recursive https://github.com/google/ngx_brotli.git
 ```
-### 10. Обновляем правила сборки
+
+### установка openssl
+```
+wget https://www.openssl.org/source/openssl-1.1.1k.tar.gz
+```
+```
+tar xvf openssl-1.1.1k.tar.gz
+```
+```
+cd openssl-1.1.1k
+```
+```
+./config --prefix=/usr/local/openssl shared zlib
+```
+```
+make
+```
+```
+sudo make install
+```
+<!-- ### 10. Обновляем правила сборки
 ```
 cd /usr/local/nginx/nginx-1*/
 sudo nano debian/rules
@@ -83,7 +103,20 @@ sudo nano debian/rules
 ### 11. Компилируем и собираем Nginx
 ```
 sudo dpkg-buildpackage -b -uc -us
+``` -->
+### Компилируем и собираем Nginx
 ```
+./configure --with-http_v3_module --with-openssl=/usr/bin/openssl --with-http_ssl_module --with-http_v2_module --with-http_realip_module --with-http_addition_module --with-http_sub_module --with-http_stub_status_module --with-http_gzip_static_module --with-http_random_index_module --with-http_secure_link_module --with-http_auth_request_module --with-threads --with-stream --with-stream_ssl_module --with-stream_realip_module --with-stream_ssl_preread_module --with-pcre --with-pcre-jit --with-compat --add-module=/usr/local/nginx/ngx_brotli
+```
+```
+sudo make
+```
+```
+sudo make install
+```
+
+
+
 ### Проверяем **`.deb`** файлы
 ```
 ls /usr/local/nginx/*.deb
