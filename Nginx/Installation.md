@@ -12,7 +12,7 @@ sudo apt install dpkg-dev uuid-dev build-essential gnupg2 git gcc cmake libpcre3
 ```
 Или просто установим все необходимое из файла `json`:
 ```
-sudo apt-get update && sudo apt-get install -y $(jq -r '.packages | keys | .[]' ~/repo-to-clone/requirements.json)
+sudo apt-get update && sudo apt-get install -y $(jq -r '.packages | keys | .[]' ~/repo-to-clone/requirements.JSON)
 ```
 ### 3. Добавляем в систему GPG ключ репозитория nginx
 ⚡ Импортируем официальный ключ, используемый `apt` для проверки подлинности пакетов:
