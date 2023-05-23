@@ -25,6 +25,3 @@ sudo apt-get update && sudo apt-get install -y $(jq -r '.packages | keys | .[]' 
 ### ⚡ [index.html](https://github.com/Z0DEN/Docker-server/blob/daeb39d3690642f73307d3f726a1a2554e436ad3/Nginx/configs/site-configuration.md)
 ### ⚡ [SSL/TLS-sertificate](https://github.com/Z0DEN/Docker-server/blob/main/Nginx/SSL_TLS-sertificates.md)
 ## MysqL
-## 
-## 
-## 
