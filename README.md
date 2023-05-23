@@ -1,6 +1,10 @@
 # Docker-server
 ## ⚡ Создание кластера распределения нагрузки на стеке LEMP
 ## Операционная система - Linux antiX (amd64) на Debian 11
+## Установка необходимых пакетов:
+```
+sudo apt-get update && sudo apt-get install -y $(jq -r '.packages | keys | .[]' ~/repo-to-clone/requirements.JSON)
+```
 # Порядок выполнения
 ## Docker
 ### 1. [installation](https://github.com/Z0DEN/Docker-server/blob/7415bd16205cb48d3fb8d2251f67af9a511abe7e/Docker/Installation.md#L1)
