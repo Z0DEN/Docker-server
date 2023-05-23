@@ -15,7 +15,7 @@ sudo hg clone -b quic https://hg.nginx.org/nginx-quic
 ```
 sudo rsync -r nginx-quic/ nginx-1.23.4/
 ```
-<!-- ## Добавление `QUIC` в исходники
+## Добавление `QUIC` в исходники
 ```
 cd /usr/local/nginx/nginx-1*/
 sudo nano debian/rules
@@ -31,4 +31,4 @@ sudo nano debian/rules
 ```
 --with-cc-opt="-I../modules/libressl/include $(CFLAGS)" --with-ld-opt="-L../modules/libressl/build/ssl -L../modules/libressl/build/crypto $(LDFLAGS)"
 ```
-## Возвращаемся в Installation -->
+## Возвращаемся в Installation

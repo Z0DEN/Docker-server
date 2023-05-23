@@ -58,6 +58,40 @@ sudo apt build-dep nginx -y
 sudo git clone --recursive https://github.com/google/ngx_brotli.git
 ```
 
+## Добавление поддержки HTTP/3 в `Nginx`
+### Скачиваем `mercurial` для клонирования репозитория `QUIC`
+```
+sudo apt-get install mercurial
+```
+### Переходим в папку с исходниками `Nginx`
+```
+cd /usr/local/nginx
+```
+### Клонируем репозиторий
+```
+sudo hg clone -b quic https://hg.nginx.org/nginx-quic
+```
+### перезаписать содержимое каталога с исходниками `Nginx` файлами из `nginx-quic`
+```
+sudo rsync -r nginx-quic/ nginx-1.23.4/
+```
+## Добавление `QUIC` в исходники
+```
+cd /usr/local/nginx/nginx-1*/
+sudo nano debian/rules
+```
+### нас интересуют 2 секции этого файла: 
+1. config.status.nginx: config.env.nginx 
+2. config.status.nginx_debug: config.env.nginx_debug
+### Перед `--with-cc-opt="$(CFLAGS)"` добавить:
+```
+--with-http_v3_module --with-stream_quic_module
+```
+### После `--with-ld-opt="$(LDFLAGS)"` добавить:
+```
+--with-cc-opt="-I../modules/libressl/include $(CFLAGS)" --with-ld-opt="-L../modules/libressl/build/ssl -L../modules/libressl/build/crypto $(LDFLAGS)"
+```
+
 ### установка openssl
 ```
 wget https://www.openssl.org/source/openssl-1.1.1k.tar.gz
@@ -77,7 +111,7 @@ make
 ```
 sudo make install
 ```
-<!-- ### 10. Обновляем правила сборки
+### 10. Обновляем правила сборки
 ```
 cd /usr/local/nginx/nginx-1*/
 sudo nano debian/rules
@@ -103,7 +137,7 @@ sudo nano debian/rules
 ### 11. Компилируем и собираем Nginx
 ```
 sudo dpkg-buildpackage -b -uc -us
-``` -->
+```
 ### Компилируем и собираем Nginx
 ```
 ./configure --with-http_v3_module --with-openssl=/usr/bin/openssl --with-http_ssl_module --with-http_v2_module --with-http_realip_module --with-http_addition_module --with-http_sub_module --with-http_stub_status_module --with-http_gzip_static_module --with-http_random_index_module --with-http_secure_link_module --with-http_auth_request_module --with-threads --with-stream --with-stream_ssl_module --with-stream_realip_module --with-stream_ssl_preread_module --with-pcre --with-pcre-jit --with-compat --add-module=/usr/local/nginx/ngx_brotli
