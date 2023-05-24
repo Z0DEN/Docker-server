@@ -78,7 +78,7 @@ sudo nano /etc/supervisor/conf.d/django_app.conf
 
 directory=/home/main/cloudblesk.site/cloud/
 
-command=daphne --access-log /var/log/daphne/access.log --proxy-headers cloud.asgi:application -b 127.0.0.1 -p 8000
+command=/home/main/.local/bin/daphne --access-log /var/log/daphne/access.log --proxy-headers cloud.asgi:application -b 127.0.0.1 -p 8000
 
 autostart=true
 autorestart=true
