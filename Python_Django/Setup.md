@@ -105,6 +105,47 @@ sudo service supervisor restart
 ```
 sudo supervisorctl status
 ```
+## Использование `uWSGI`
+### Установка
+```
+sudo apt-get install uwsgi
+```
+```
+sudo pip3 install uwsgi
+```
+### Добавление конфига `uWSGI`
+```
+sudo nano /etc/uwsgi/apps-available/cloud.ini
+```
+```
+[uwsgi]
+chdir = /home/main/cloudblesk.site/cloud
+module = cloud.asgi:application
+master = true
+processes = 4
+socket = /run/uwsgi/your_project.sock
+chmod-socket = 660
+vacuum = true
+touch-reload
+```
+```
+sudo ln -s /etc/uwsgi/apps-available/cloud.ini /etc/uwsgi/apps-enabled/cloud.ini
+```
+```
+sudo service uwsgi start
+```
+### Создадим директорию для хранения `unix-сокета`
+```
+sudo mkdir -p /run/uwsgi
+sudo chown www-data:www-data /run/uwsgi
+```
+### Добавляем `location` в конфиг сайта
+```
+    location / {
+        include uwsgi_params;
+        uwsgi_pass unix:/run/uwsgi/your_project.sock;
+    }
+```
 ## Траблшутинг
 ```
 pip install attrs
