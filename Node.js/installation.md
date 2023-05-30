@@ -14,3 +14,9 @@ sudo npm install -g create-react-app
 create-react-app my-app
 cd my-app
 ```
+```
+npm install react react-dom --save
+```
+```
+npm install @babel/core @babel/preset-env @babel/preset-react babel-loader --save-dev
+```
