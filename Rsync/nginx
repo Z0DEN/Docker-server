@@ -1,0 +1,18 @@
+```
+sudo rsync -avz -e 'ssh -p 1221' --recursive main@192.168.0.98:/home/main /home/node1
+```
+```
+sudo apt-get update && sudo apt-get install -y $(jq -r '.packages | keys | .[]' ~/repo-to-clone/requirements.JSON)
+```
+```
+sudo rsync -avz -e 'ssh -p 1221' --recursive main@192.168.0.98:/etc/nginx /etc/
+```
+```
+sudo rsync -avz -e 'ssh -p 1221' --recursive main@192.168.0.98:/etc/init.d/nginx /etc/init.d/nginx
+```
+```
+sudo rsync -avz -e 'ssh -p 1221' --recursive main@192.168.0.98:/usr/sbin/nginx /usr/sbin/nginx
+```
+```
+sudo update-rc.d nginx defaults
+```
