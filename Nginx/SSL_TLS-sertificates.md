@@ -1,5 +1,5 @@
 # Добавление SSL/TLS сертификатов на сайт.
-### 1. Генерация SSL ключ
+### 1. Генерация SSL ключа
 ```
 sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
 ```
