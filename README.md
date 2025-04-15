@@ -1,6 +1,13 @@
-# Docker-server (README ФАЙЛ ДАВНО НЕ АКТУАЛЕН, ГОТОВЫЙ КОД ПРОЕКТА А ТАКЖЕ ПРЕЗЕНТАЦИЮ МОЖНО ПОСМОТРЕТЬ ПО ССЫЛКАМ НИЖЕ)
-репозитории проекта: [main server](https://github.com/Z0DEN/myproject) [node server](https://github.com/Z0DEN/node_backend) [pdf презентация](https://github.com/Z0DEN/Docker-server/blob/main/cloud.pdf)
-## ⚡ Создание кластера распределения нагрузки на стеке LEMP(сервис облачного хранилища)
+# Сервис облачного хранилища на фреймворке Django (README ФАЙЛ ДАВНО НЕ АКТУАЛЕН, ГОТОВЫЙ КОД ПРОЕКТА А ТАКЖЕ ПРЕЗЕНТАЦИЮ МОЖНО ПОСМОТРЕТЬ ПО ССЫЛКАМ НИЖЕ)
+репозитории проекта: [main server](https://github.com/Z0DEN/myproject), [node server](https://github.com/Z0DEN/node_backend) 
+[pdf презентация](https://github.com/Z0DEN/Docker-server/blob/main/cloud.pdf)
+## Задачи/мини цели:
+## ⚡ Использовать фреймворк Django для серверной реализации фукнций доступных по API(обезопасить доступ при помощи json web token)
+## ⚡ Добится легкой масштабируемости и развертки при помощи Docker(внутри контейнеров запускать supervisor с процессами: nginx, redis, django)
+## ⚡ Изначально в качестве базы данных планировалось использовать MySQL, в последствии перешел на PostgreSQL
+## ⚡ Для обработки запросов и шифрования ssl/tls использовать веб-сервер Nginx
+## ⚡ Для оптимизации запросов хранить токены в ОЗУ(Redis)
+
 ## Операционная система - Linux antiX (amd64) на Debian 11
 ## Установка необходимых пакетов:
 ```
