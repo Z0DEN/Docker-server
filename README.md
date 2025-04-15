@@ -1,6 +1,7 @@
 # Сервис облачного хранилища на фреймворке Django (README ФАЙЛ С ОПИСАНИЕМ ХОДА РАБОТЫ ДАВНО НЕ АКТУАЛЕН, ГОТОВЫЙ КОД ПРОЕКТА А ТАКЖЕ ПРЕЗЕНТАЦИЮ МОЖНО ПОСМОТРЕТЬ ПО ССЫЛКАМ НИЖЕ)
 ### репозитории проекта: [main server](https://github.com/Z0DEN/myproject), [node server](https://github.com/Z0DEN/node_backend) 
 ### [pdf презентация](https://github.com/Z0DEN/Docker-server/blob/main/cloud.pdf)
+### ссылка на сайт https://whooole.space/
 ## Задачи/мини цели:
 ## ⚡ Использовать фреймворк Django для серверной реализации фукнций доступных по API(обезопасить доступ при помощи json web token)
 ## ⚡ Добится легкой масштабируемости и развертки при помощи Docker(внутри контейнеров запускать supervisor с процессами: nginx, redis, django)
