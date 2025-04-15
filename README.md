@@ -1,6 +1,6 @@
-# Docker-server НЕ АКТУАЛЬНО
-репозитории проекта: [main server](https://github.com/Z0DEN/myproject) [node server](https://github.com/Z0DEN/node_backend) [pdf](https://github.com/Z0DEN/Docker-server/blob/main/cloud.pdf)
-## ⚡ Создание кластера распределения нагрузки на стеке LEMP
+# Docker-server (README ФАЙЛ ДАВНО НЕ АКТУАЛЕН, ГОТОВЫЙ КОД ПРОЕКТА А ТАКЖЕ ПРЕЗЕНТАЦИЮ МОЖНО ПОСМОТРЕТЬ ПО ССЫЛКЕ НИЖЕ)
+репозитории проекта: [main server](https://github.com/Z0DEN/myproject) [node server](https://github.com/Z0DEN/node_backend) [pdf презентация](https://github.com/Z0DEN/Docker-server/blob/main/cloud.pdf)
+## ⚡ Создание кластера распределения нагрузки на стеке LEMP(сервис облачного хранилища)
 ## Операционная система - Linux antiX (amd64) на Debian 11
 ## Установка необходимых пакетов:
 ```
